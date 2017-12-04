@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,72 +6,91 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>辽宁省气象中心</title>
     <link href="css/bootstrap.css" rel="stylesheet"/>
-
+    <script type="text/javascript">
+        function dosubmit() {
+            if (document.all("username").value == "") {
+                window.alert("请输入用户名");
+                document.all("username").focus();
+                return false;
+            }
+            if (document.all("password").value == "") {
+                window.alert("请输入密码");
+                document.all("password").focus();
+                return false;
+            }
+        }
+        function reset() {
+            document.all("username").value = "";
+            document.all("password").value = "";
+        }
+    </script>
 </head >
 <body background="images/background.png" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="justify-content: center;background-size: 100%;width: 100%;height: 100%;">
 <div id="tupian">
-<center>
+    <center>
 
-    <img src="images/FL_SignIn_v2_maskF.gif" style="width: 100%;height: 100%;">
-<div style="margin: auto;
+        <img src="images/FL_SignIn_v2_maskF.gif " style="width: 100%;height: 100%;">
+        <div style="margin: auto;
   position: absolute;
    left: 0; right: 0;" id="denglu">
-    <table  border=0  cellpadding=0  cellspacing=0  width=100%  height=100%>
-        <tr>
-            <td  width=100%  align=center  valign=center>
+            <table  border=0  cellpadding=0  cellspacing=0  width=100%  height=100%>
+                <tr>
+                    <td  width=100%  align=center  valign=center>
+                        <form method="post" action="checkUser.htm" autocomplete="on" action="register.htm">
+                            <table border="0" style="width:361px;height:299px;background-size:100% 100%;background-repeat: no-repeat" background="images/subject.png">
+                                <tr>
+                                    <td style="height: 20%;width: 100%"></td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="height: 10%;width: 100%">
+                                        <input  id="username" name="username" required="required" placeholder="用户名" type="text" style="border: 0; width: 80%;height: 100%;font-family:宋体;background-color: #bfbfbf;font-size: 13pt;font-weight: bold; " >
 
-                <table border="0" style="width:361px;height:299px;background-size:100% 100%;background-repeat: no-repeat" background="images/subject.png">
-                    <tr>
-                        <td style="height: 20%;width: 100%"></td>
-                    </tr>
-                    <form>
-                    <tr>
-                        <td align="center" style="height: 10%;width: 100%">
-                            <input placeholder="用户名" type="text" style="border: 0; width: 80%;height: 100%;font-family:宋体;background-color: #bfbfbf;font-size: 13pt;font-weight: bold; ">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="height: 5%;width: 100%"></td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="height: 10%;width: 100%" >
-                            <input placeholder="密码" type="password" style="border:0;width: 80%;height: 100%;font-family: 宋体;font-size: 13pt;font-weight: bold;background-color: #bfbfbf;">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right" style="width: 100%;height: 30%">
-                            <button type="submit" style="outline:none;border:0; background-color: transparent; width: 30%;"><img src="images/sign.png"style="height: 100%;width: 100%" > </button>
-                        </td>
-                    </tr>
-                    </form>
-                    <tr >
-                        <td>
-                            <table>
-                                <td width="5%"></td>
-                                <td width="5%"><img src="images/cloud.png"></td>
-                                <td width="15%"><font color="#FFFFFF">监管中心</font></td>
-                                <td width="15%"><font color="#FFFFFF">新用户注册</font></td>
-                                <td width="15%"></td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 5%;width: 100%"></td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="height: 10%;width: 100%" >
+                                        <input id="password" name="password" required="required" placeholder="密码" type="password" style="border:0;width: 80%;height: 100%;font-family: 宋体;font-size: 13pt;font-weight: bold;background-color: #bfbfbf;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" style="width: 100%;height: 30%">
+                                        <button type="submit" style="outline:none;border:0; background-color: transparent; width: 30%;"><img src="images/sign.png"style="height: 100%;width: 100%" > </button>
+                                    </td>
+                                </tr>
+                                <tr><td align="left" >	<div style="color:#F00;margin-left:40px"> ${msg}</div>
+                                    <div > <span style="color:red;">${userMsg}</span></div></td></tr>
+                                <tr >
+                                    <td>
+                                        <table>
+                                            <td width="5%"></td>
+                                            <td width="5%"><img src="images/cloud.png"></td>
+                                            <td width="15%"><font color="#FFFFFF">监管中心</font></td>
+                                            <td width="15%"><a href="orgregister.htm"><font color="#FFFFFF">新用户注册</font></a></td>
+                                            <td width="15%"></td>
+                                        </table>
+                                    </td>
+                                    <td style="width: 20%"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 5%"></td>
+                                </tr>
+
                             </table>
-                        </td>
-                        <td style="width: 20%"></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td style="height: 5%"></td>
-                    </tr>
+                        </form>
 
-                </table>
-
-            </td>
-        </tr>
-    </table>
-</div>
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
-    $("#denglu").css("top",($("#tupian").height())/3);
-</script>
-</center>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $("#denglu").css("top",($("#tupian").height())/3);
+        </script>
+    </center>
 </div>
 </body>
 </html>
